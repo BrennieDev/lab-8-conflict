@@ -4,16 +4,23 @@ author: "Ian Brunjes"
 date: "11/24/2020"
 output: html_document
 ---
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
+library(hexbin)
 ```
+
+
+```{r}
+install.packages("hexbin")
+```
+
 
 ```{r}
 ggplot(data = storms, aes(x = pressure, y = wind)) +
   geom_hex() +
-  scale_fill_gradient(low = "blue", high = "yellow")
+  scale_fill_gradient(low = "black", high = "magenta") +
+  theme_minimal()
 ```
 
 
